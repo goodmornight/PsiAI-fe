@@ -55,8 +55,16 @@ export default {
 				class="navbar-nav bd-navbar-nav flex-row list-unstyled menu-left mb-0"
 			>
 				<li class>
-					<button
+					<!-- <button
 						class="button-menu-mobile open-left disable-btn"
+						:class="{ open: isMenuOpened }"
+						@click="toggleMenu"
+					>
+						<feather type="menu" class="menu-icon align-middle"></feather>
+						<feather type="x" class="close-icon"></feather>
+					</button> -->
+					<button
+						class="button-menu-mobile open-left"
 						:class="{ open: isMenuOpened }"
 						@click="toggleMenu"
 					>

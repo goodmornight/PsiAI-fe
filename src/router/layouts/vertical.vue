@@ -9,7 +9,8 @@ export default {
 	components: { Topbar, SideBar, Rightsidebar, Footer },
 	data() {
 		return {
-			isMenuCondensed: false,
+			// isMenuCondensed: false,
+			isMenuCondensed: true,
 			isMobileMenuOpened: false,
 			user: this.$store ? this.$store.state.auth.currentUser : {} || {},
 			layout: this.$store ? this.$store.state.layout.layoutType : null || null,
