@@ -39,7 +39,8 @@ export default {
 	<div class="navbar navbar-expand flex-column flex-md-row navbar-custom">
 		<div class="container-fluid">
 			<!-- LOGO -->
-			<a href="/" class="navbar-brand mr-0 mr-md-2 logo">
+			<!-- <a href="/" class="navbar-brand mr-0 mr-md-2 logo"> -->
+			<a href="/" class="navbar-brand mr-0 logo">
 				<span class="logo-lg">
 					<!-- <img src="@assets/images/logo.png" alt height="24" /> -->
 					<img src="@assets/images/psi.svg" alt height="36" />
@@ -379,5 +380,16 @@ export default {
 }
 .button-menu-mobile {
 	outline: none !important;
+}
+.left-side-menu-condensed .navbar-custom {
+  left: 0 !important;
+  padding-left: 0px;
+}
+.navbar-custom .button-menu-mobile {
+	margin-left: 50px;
+	line-height: 10px;
+}
+.left-side-menu-condensed .button-menu-mobile {
+	margin-left: 0;
 }
 </style>
