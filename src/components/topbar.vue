@@ -93,7 +93,7 @@ export default {
 					</div>
 				</li>
 
-				<b-nav-item-dropdown
+				<!-- <b-nav-item-dropdown
 					id="globe-tooltip"
 					right
 					variant="black"
@@ -106,7 +106,7 @@ export default {
 					<b-tooltip target="globe-tooltip" placement="left"
 						>Change language</b-tooltip
 					>
-					<!-- item-->
+
 					<b-dropdown-text href="javascript:void(0);" class="notify-item">
 						<img
 							src="@assets/images/flags/germany.jpg"
@@ -117,7 +117,6 @@ export default {
 						<span class="align-middle">German</span>
 					</b-dropdown-text>
 
-					<!-- item-->
 					<b-dropdown-text href="javascript:void(0);" class="notify-item">
 						<img
 							src="@assets/images/flags/italy.jpg"
@@ -128,7 +127,6 @@ export default {
 						<span class="align-middle">Italian</span>
 					</b-dropdown-text>
 
-					<!-- item-->
 					<b-dropdown-text href="javascript:void(0);" class="notify-item">
 						<img
 							src="@assets/images/flags/spain.jpg"
@@ -139,7 +137,6 @@ export default {
 						<span class="align-middle">Spanish</span>
 					</b-dropdown-text>
 
-					<!-- item-->
 					<b-dropdown-text href="javascript:void(0);" class="notify-item">
 						<img
 							src="@assets/images/flags/russia.jpg"
@@ -149,7 +146,7 @@ export default {
 						/>
 						<span class="align-middle">Russian</span>
 					</b-dropdown-text>
-				</b-nav-item-dropdown>
+				</b-nav-item-dropdown> -->
 
 				<b-nav-item-dropdown
 					id="bell-notification"
@@ -299,36 +296,49 @@ export default {
 					>
 				</li>
 
-				<b-nav-item-dropdown
+				<!-- <b-nav-item-dropdown
 					right
 					class="notification-list align-self-center profile-dropdown"
+					toggle-class="nav-user mr-0"
+				> -->
+				<b-nav-item-dropdown
+					right
+					class="notification-list align-self-center profile-dropdown d-block"
 					toggle-class="nav-user mr-0"
 				>
 					<template v-slot:button-content>
 						<div class="media user-profile">
 							<img
-								src="@assets/images/users/avatar-7.jpg"
+								src="@assets/images/users/avatar.svg"
 								alt="user-image"
 								class="rounded-circle align-self-center"
 							/>
-							<div class="media-body text-left">
+							<!-- <div class="media-body text-left">
 								<h6 class="pro-user-name ml-2 my-0">
 									<span>{{ user.name }}</span>
 									<span class="pro-user-desc text-muted d-block mt-1"
 										>Administrator</span
 									>
 								</h6>
-							</div>
+							</div> -->
 							<feather
 								type="chevron-down"
 								class="ml-2 align-self-center"
 							></feather>
 						</div>
 					</template>
+
 					<b-dropdown-item href="/pages/profile" class="notify-item p-0">
 						<feather type="user" class="icon-dual icon-xs mr-2"></feather>
-						<span>My Account</span>
+						<span class="font-weight-bold">{{ currentUser.username }}</span>
 					</b-dropdown-item>
+
+					<b-dropdown-divider></b-dropdown-divider>
+
+					<!-- <b-dropdown-item href="/pages/profile" class="notify-item p-0">
+						<feather type="user" class="icon-dual icon-xs mr-2"></feather>
+						<span>My Account</span>
+					</b-dropdown-item> -->
 
 					<b-dropdown-item href="javascript:void(0);" class="notify-item p-0">
 						<feather type="settings" class="icon-dual icon-xs mr-2"></feather>
