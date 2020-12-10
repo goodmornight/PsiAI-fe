@@ -190,4 +190,7 @@ export default {
 .ps > .ps__scrollbar-y-rail:hover > .ps__scrollbar-y {
 	width: 6px !important;
 }
+.left-side-menu-condensed .left-side-menu {
+	position: fixed;
+}
 </style>
