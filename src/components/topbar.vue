@@ -1,5 +1,5 @@
 <script>
-import { authComputed } from '@state/helpers'
+import { authComputed, authMethods } from '@state/helpers'
 import VuePerfectScrollbar from 'vue-perfect-scrollbar'
 
 export default {
@@ -24,12 +24,18 @@ export default {
 		...authComputed,
 	},
 	methods: {
+		...authMethods,
 		toggleMenu() {
 			this.$parent.toggleMenu()
 		},
 		toggleRightSidebar() {
 			this.$parent.toggleRightSidebar()
 		},
+		// 退出登录
+		logout () {
+			this.logOut() // auth/logOut
+      this.$keycloak.logoutFn()
+    }
 	},
 }
 </script>
@@ -363,7 +369,7 @@ export default {
 
 					<b-dropdown-divider></b-dropdown-divider>
 
-					<b-dropdown-item href="/logout" class="notify-item p-0">
+					<b-dropdown-item @click="logout" class="notify-item p-0">
 						<feather type="log-out" class="icon-dual icon-xs mr-2"></feather>
 						<span>Logout</span>
 					</b-dropdown-item>
