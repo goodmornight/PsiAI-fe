@@ -445,20 +445,70 @@ const chartsRoutes = [
 ]
 
 // PsiAI
-const userRoutes = [
+const homeRoutes = [
   {
     path: '/',
-    name: 'Profile',
-    header: 'Navigation',
-    icon: 'user',
-    component: () => lazyLoadView(import('@views/pages/psi/profile/')),
+    name: 'Home',
+    icon: 'home',
+    component: () => lazyLoadView(import('@views/pages/psi/index-user')),
+    meta: { authRequired: true },
+    props: (route) => ({ user: store.state.auth.currentUser || {} }),
+  },
+]
+
+const paperRoutes = [
+  {
+    path: '/paper',
+    name: 'Paper',
+    icon: 'file',
+    component: () => lazyLoadView(import('@views/pages/psi/paper-index')),
     meta: { authRequired: true },
     props: (route) => ({ user: store.state.auth.currentUser || {} }),
   },
 ]
 
 const projectRoutes = [
+  {
+    path: '/project',
+    name: 'Project',
+    icon: 'archive',
+    component: () => lazyLoadView(import('@views/pages/psi/proj-index')),
+    meta: { authRequired: true },
+    props: (route) => ({ user: store.state.auth.currentUser || {} }),
+  },
+]
 
+const datasetRoutes = [
+  {
+    path: '/dataset',
+    name: 'Dataset',
+    icon: 'database',
+    component: () => lazyLoadView(import('@views/pages/psi/dataset-index')),
+    meta: { authRequired: true },
+    props: (route) => ({ user: store.state.auth.currentUser || {} }),
+  },
+]
+
+const userRoutes = [
+  {
+    path: '/user',
+    name: 'User',
+    icon: 'users',
+    component: () => lazyLoadView(import('@views/pages/psi/user-index')),
+    meta: { authRequired: true },
+    props: (route) => ({ user: store.state.auth.currentUser || {} }),
+  },
+]
+
+const profileRoutes = [
+  {
+    path: '/profile',
+    name: 'Profile',
+    icon: 'user',
+    component: () => lazyLoadView(import('@views/pages/psi/profile/')),
+    meta: { authRequired: true },
+    props: (route) => ({ user: store.state.auth.currentUser || {} }),
+  },
 ]
 
 const authProtectedRoutes = [
@@ -469,7 +519,12 @@ const authProtectedRoutes = [
   // ...formsRoutes,
   // ...chartsRoutes,
   // ...tablesRoutes
-  ...userRoutes
+  ...homeRoutes,
+  ...paperRoutes,
+  ...projectRoutes,
+  ...datasetRoutes,
+  ...userRoutes,
+  ...profileRoutes
 ]
 const allRoutes = [...authRoutes, ...authProtectedRoutes, ...errorPagesRoutes]
 
