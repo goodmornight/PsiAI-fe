@@ -444,15 +444,32 @@ const chartsRoutes = [
   },
 ]
 
+// PsiAI
+const userRoutes = [
+  {
+    path: '/',
+    name: 'Profile',
+    header: 'Navigation',
+    icon: 'user',
+    component: () => lazyLoadView(import('@views/pages/psi/profile/')),
+    meta: { authRequired: true },
+    props: (route) => ({ user: store.state.auth.currentUser || {} }),
+  },
+]
+
+const projectRoutes = [
+
+]
 
 const authProtectedRoutes = [
-  ...dashboardRoutes,
-  ...appsRoutes,
-  ...pagesRoutes,
-  ...uiRoutes,
-  ...formsRoutes,
-  ...chartsRoutes,
-  ...tablesRoutes
+  // ...dashboardRoutes,
+  // ...appsRoutes,
+  // ...pagesRoutes,
+  // ...uiRoutes,
+  // ...formsRoutes,
+  // ...chartsRoutes,
+  // ...tablesRoutes
+  ...userRoutes
 ]
 const allRoutes = [...authRoutes, ...authProtectedRoutes, ...errorPagesRoutes]
 
