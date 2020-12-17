@@ -456,16 +456,16 @@ const homeRoutes = [
   },
 ]
 
-const paperRoutes = [
-  {
-    path: '/paper',
-    name: 'Paper',
-    icon: 'file',
-    component: () => lazyLoadView(import('@views/pages/psi/paper-index')),
-    meta: { authRequired: true },
-    props: (route) => ({ user: store.state.auth.currentUser || {} }),
-  },
-]
+// const paperRoutes = [
+//   {
+//     path: '/paper',
+//     name: 'Paper',
+//     icon: 'file',
+//     component: () => lazyLoadView(import('@views/pages/psi/paper-index')),
+//     meta: { authRequired: true },
+//     props: (route) => ({ user: store.state.auth.currentUser || {} }),
+//   },
+// ]
 
 const projectRoutes = [
   {
@@ -492,7 +492,7 @@ const datasetRoutes = [
 const userRoutes = [
   {
     path: '/user',
-    name: 'User',
+    name: 'Users',
     icon: 'users',
     component: () => lazyLoadView(import('@views/pages/psi/user-index')),
     meta: { authRequired: true },
@@ -520,7 +520,7 @@ const authProtectedRoutes = [
   // ...chartsRoutes,
   // ...tablesRoutes
   ...homeRoutes,
-  ...paperRoutes,
+  // ...paperRoutes,
   ...projectRoutes,
   ...datasetRoutes,
   ...userRoutes,
