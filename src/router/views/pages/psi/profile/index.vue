@@ -57,8 +57,8 @@ export default {
 
 <template>
 	<Layout>
-		<PageHeader :title="title" :items="items" />
-		<div class="row">
+		<!-- <PageHeader :title="title" :items="items" /> -->
+		<div class="row mt-4">
 			<div class="col-lg-3">
 				<UserCard />
 			</div>
@@ -67,21 +67,21 @@ export default {
 				<div class="card">
 					<div class="card-body">
 						<b-tabs class="navtab-bg" pills justified>
-							<b-tab title="Activity" active>
-								<Activities :activities="activities" />
+							<b-tab title="项目" active>
+								<!-- <Activities :activities="activities" /> -->
 							</b-tab>
-							<b-tab title="Messages">
-								<Messages :messages="messageData" />
+							<b-tab title="数据">
+								<!-- <Messages :messages="messageData" /> -->
 							</b-tab>
-							<b-tab title="Projects">
-								<Projects :projects="projectData" />
+							<b-tab title="笔记">
+								<!-- <Projects :projects="projectData" /> -->
 							</b-tab>
-							<b-tab title="Tasks">
-								<Tasks :tasks="tasks" />
+							<b-tab title="容器">
+								<!-- <Tasks :tasks="tasks" /> -->
 							</b-tab>
-							<b-tab title="Files">
+							<!-- <b-tab title="Files">
 								<Files />
-							</b-tab>
+							</b-tab> -->
 						</b-tabs>
 					</div>
 				</div>
