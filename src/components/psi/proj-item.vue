@@ -66,5 +66,15 @@ export default {
 </script>
 
 <template>
-
+  <div>
+    <div class="img-con">
+      
+    </div>
+    <div class="info-con">
+      <div class="title-con"></div>
+      <div class="social-con"></div>
+      <div class="detail-con"></div>
+      <div class="contributors"></div>
+    </div>
+  </div>
 </template>
