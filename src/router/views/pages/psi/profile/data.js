@@ -17,8 +17,14 @@ const projects = [
     tags: ['计算机视觉', '机器学习'],
     // 参与用户
     users: [{
-      username: 'admin',
-      imgUrl:'',
+      userId: 'admin1',
+      imgUrl:require('@assets/images/users/avatar.svg'),
+    },{
+      userId: 'admin2',
+      imgUrl:require('@assets/images/users/avatar-1.svg'),
+    },{
+      userId: 'admin3',
+      imgUrl:require('@assets/images/users/avatar-2.svg'),
     }],
     // 最近更新时间
     updateTime: 1608174894608

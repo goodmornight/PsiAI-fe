@@ -1,5 +1,5 @@
 <script>
-
+import Users from '@components/psi/contributors'
 /**
  * Project component
  */
@@ -60,7 +60,7 @@ export default {
     //   default: 1608174894608
     // }
   },
-  components: {  },
+  components: { Users },
   data() {
     return {
       
@@ -100,6 +100,7 @@ export default {
               <p>
                 {{ project.desc }}
                 <b-badge v-for="tag in project.tags" :key="tag" variant="primary" class="ml-2">{{ tag }}</b-badge>
+                <Users :users="project.users"/>
               </p>
             </div>
             <div class="col-auto">
