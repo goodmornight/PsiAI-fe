@@ -315,13 +315,14 @@
           &:hover {
             > a {
               position: relative;
-              width: calc(190px + #{$leftbar-width-collapsed});
+              // width: calc(190px + #{$leftbar-width-collapsed});
               color: $menu-item-active !important;
               background-color: $menu-item-bg-hover;
               transition: none;
 
               span {
-                display: inline;
+                // display: inline;
+                display: none;
               }
             }
 
@@ -442,7 +443,8 @@
 
 @media (min-width: 769px) {
   body.left-side-menu-condensed {
-    min-height: 1200px;
+    // 解决总是出现滚动条的问题
+    // min-height: 1200px;
   }
 }
 
