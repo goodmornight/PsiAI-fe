@@ -22,10 +22,12 @@ export default {
     },
   },
   props: {
+
     project: {
       type: Object,
       default: () => {}
     }
+
   },
   data() {
     return {
@@ -33,12 +35,11 @@ export default {
     }
   },
   computed:{
+    // 贡献者，最多显示 5 位
     users () {
       return this.project.users.length > 5 ? this.project.users.slice(0, 5) : this.project.users
     }
-    // formatVersion () {
-    //   return "V" + this.project.version
-    // }
+    
   }
 }
 </script>
