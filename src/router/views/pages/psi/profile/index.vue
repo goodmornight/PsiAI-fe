@@ -2,15 +2,16 @@
 import appConfig from '@src/app.config'
 import Layout from '@layouts/main'
 import ProjItem from '@components/psi/proj-item'
+import DatasetItem from '@components/psi/dataset-item'
 
 import UserCard from './user-card'
-import Activities from './activities'
-import Messages from './messages'
+// import Activities from './activities'
+// import Messages from './messages'
 // import Projects from './projects'
 import Tasks from './tasks'
 import Files from './files'
 import { activities, messageData, projectData, tasks } from './data-profile'
-import { projects } from './data'
+import { projects, datasets } from './data'
 
 /**
  * Profile component
@@ -23,12 +24,13 @@ export default {
 	components: {
 		Layout,
 		UserCard,
-		Activities,
-		Messages,
+		// Activities,
+		// Messages,
 		// Projects,
 		Tasks,
 		Files,
-		ProjItem
+		ProjItem,
+		DatasetItem
 	},
 	data() {
 		return {
@@ -36,6 +38,7 @@ export default {
 			messageData: messageData,
 			// projectData: projectData,
 			projectData: projects,
+			datasetData: datasets,
 			tasks: tasks,
 			title: 'Profile',
 			items: [
@@ -70,11 +73,15 @@ export default {
 					<div class="card-body">
 						<b-tabs class="navtab-bg" pills justified>
 							<b-tab title="项目" active>
-								<ProjItem v-for="proj in projectData" :key="proj.title" :project="proj" />
+								<!-- <div v-if="projectData"> -->
+									<ProjItem v-for="proj in projectData" :key="proj.title" :project="proj" />
+								<!-- </div> -->
+								
 								<!-- <Activities :activities="activities" /> -->
 							</b-tab>
 							<b-tab title="数据">
-								<Messages :messages="messageData" />
+								<DatasetItem v-for="dataset in datasetData" :key="dataset.title" :dataset="dataset" />
+								<!-- <Messages :messages="messageData" /> -->
 							</b-tab>
 							<b-tab title="笔记">
 								<Files />

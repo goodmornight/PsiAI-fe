@@ -1,7 +1,7 @@
 <script>
 import Users from '@components/psi/contributors'
 /**
- * Project component
+ * Dataset component
  */
 export default {
   components: { Users },
@@ -23,7 +23,7 @@ export default {
   },
   props: {
 
-    project: {
+    dataset: {
       type: Object,
       default: () => {}
     }
@@ -37,11 +37,7 @@ export default {
   computed:{
     // 贡献者，最多显示 5 位
     users () {
-      return this.project.users.length > 5 ? this.project.users.slice(0, 5) : this.project.users
-    },
-
-    thumbnail () {
-      return this.project.imgUrl ? this.project.imgUrl : require('@assets/images/projects/project-1.jpg')
+      return this.dataset.users.length > 5 ? this.dataset.users.slice(0, 5) : this.dataset.users
     }
 
   }
@@ -50,13 +46,13 @@ export default {
 
 <template>
 
-  <div class="proj-card">
+  <div class="dataset-list-item">
 
     <div class="row align-items-center">
 
       <div class="col-auto">
         <img
-          :src="thumbnail"
+          src="@assets/images/projects/project-1.jpg"
           class="thumbnail"
           alt="file-image"
         />
@@ -65,48 +61,48 @@ export default {
       <div class="col pl-0">
         <div class="d-flex flex-row text-center align-items-center">
           <a href="javascript:void(0);" class="text-muted font-weight-bold title">
-            {{ project.title }}
+            {{ dataset.title }}
           </a>
           <i class="uil uil-globe font-size-14 ml-2"></i>
-          <b-badge class="badge-soft-primary ml-2">{{ "V " + project.version }}</b-badge>
-          <b-badge class="badge-soft-success ml-2">{{ project.frame }}</b-badge>
-          <b-badge class="badge-soft-info ml-2">{{ project.pyVer }}</b-badge>
-          <b-badge v-if="project.isArchive" class="badge-soft-warning ml-2">归档</b-badge>
-          <b-badge v-if="project.isInvalid" class="badge-soft-danger ml-2">失效</b-badge>
+          <b-badge class="badge-soft-primary ml-2">{{ "V " + dataset.version }}</b-badge>
+          <b-badge class="badge-soft-success ml-2">{{ dataset.type }}</b-badge>
+          <b-badge class="badge-soft-info ml-2">{{ dataset.task }}</b-badge>
+          <b-badge v-if="dataset.isArchive" class="badge-soft-warning ml-2">归档</b-badge>
+          <b-badge v-if="dataset.isInvalid" class="badge-soft-danger ml-2">失效</b-badge>         
         </div>
         <div class="info-text">
           <span>
             <i class="uil uil-thumbs-up font-size-14 ml-2"></i>
-            {{ project.like | numFilter }}
+            {{ dataset.like | numFilter }}
           </span>
           <span>
             <i class="uil uil-star font-size-14 ml-2"></i>
-            {{ project.star | numFilter }}
+            {{ dataset.star | numFilter }}
           </span>
           <span>
             <i class="uil  uil-eye font-size-14 ml-2"></i>
-            {{ project.watch | numFilter }}
+            {{ dataset.watch | numFilter }}
           </span>
         </div>
         <div>
           <span class="overflow-text">
-            {{ project.desc }}
+            {{ dataset.desc }}
           </span>
-          <b-badge v-for="tag in project.tags" :key="tag" variant="primary" class="ml-2">{{ tag }}</b-badge>
+          <b-badge v-for="tag in dataset.tags" :key="tag" variant="primary" class="ml-2">{{ tag }}</b-badge>
         </div>
       </div>
 
       <div class="col-auto d-flex flex-column other-info" style="width: 13%">
-        <p class="mb-auto update-time">{{ project.updateTime | moment("from", "now") }}</p>
+        <p class="mb-auto update-time">{{ dataset.updateTime | moment("from", "now") }}</p>
         <Users :users="users"/>
       </div>
 
     </div>
-    <div v-if="project.isInvalid" class="overlay"></div>
+    <div v-if="dataset.isInvalid" class="overlay"></div>
   </div> 
 </template>
 <style>
-.proj-card {
+.dataset-list-item {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -114,7 +110,7 @@ export default {
   /*height: 6rem;*/
   border: 1px solid #f6f6f7;
   box-shadow: none;
-  border-radius: 0.3rem;
+  border-radius: 0.25rem;
   margin-bottom: 0.5rem;
   padding: 0.5rem;
 }
