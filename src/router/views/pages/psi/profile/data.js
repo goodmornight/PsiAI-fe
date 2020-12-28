@@ -123,4 +123,37 @@ const datasets = [
     isInvalid: false
   },
 ]
-export { projects, datasets }
+
+const containers = [
+  {
+    title: 'afenqi / a1b2c3a1b2c3a1b2',
+    type: '基础版',
+    detail: '2核4G内存',
+    proj: 'Lafayette / StyleTrans',
+    branch: 'ChaosTransStype',
+    createdTime: 1608174894608,
+    updateTime: 1608174895208,
+    state: 'running',
+    runningDuration: 10000,
+    users: [{
+      userId: 'admin1',
+      imgUrl: require('@assets/images/users/avatar.svg'),
+    },{
+      userId: 'admin2',
+      imgUrl: require('@assets/images/users/avatar-1.svg'),
+    },{
+      userId: 'admin3',
+      imgUrl: require('@assets/images/users/avatar-2.svg'),
+    },{
+      userId: 'admin4',
+      imgUrl: require('@assets/images/users/avatar.svg'),
+    },{
+      userId: 'admin5',
+      imgUrl: require('@assets/images/users/avatar-1.svg'),
+    },{
+      userId: 'admin6',
+      imgUrl: require('@assets/images/users/avatar-2.svg'),
+    }],
+  },
+]
+export { projects, datasets, containers }

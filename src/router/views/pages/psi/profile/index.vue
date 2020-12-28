@@ -3,6 +3,7 @@ import appConfig from '@src/app.config'
 import Layout from '@layouts/main'
 import ProjItem from '@components/psi/proj-item'
 import DatasetItem from '@components/psi/dataset-item'
+import ContainerItem from '@components/psi/container-item'
 
 import UserCard from './user-card'
 // import Activities from './activities'
@@ -11,7 +12,7 @@ import UserCard from './user-card'
 import Tasks from './tasks'
 import Files from './files'
 import { activities, messageData, projectData, tasks } from './data-profile'
-import { projects, datasets } from './data'
+import { projects, datasets, containers } from './data'
 
 /**
  * Profile component
@@ -30,7 +31,8 @@ export default {
 		Tasks,
 		Files,
 		ProjItem,
-		DatasetItem
+		DatasetItem,
+		ContainerItem
 	},
 	data() {
 		return {
@@ -39,6 +41,7 @@ export default {
 			// projectData: projectData,
 			projectData: projects,
 			datasetData: datasets,
+			containerData: containers,
 			tasks: tasks,
 			title: 'Profile',
 			items: [
@@ -88,7 +91,8 @@ export default {
 								<!-- <Projects :projects="projectData" /> -->
 							</b-tab>
 							<b-tab title="容器">
-								<Tasks :tasks="tasks" />
+								<!-- <Tasks :tasks="tasks" /> -->
+								<ContainerItem v-for="container in containerData" :key="container.title" :container="container" />
 							</b-tab>
 							<!-- <b-tab title="Files">
 								<Files />

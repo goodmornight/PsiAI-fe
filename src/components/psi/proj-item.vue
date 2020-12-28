@@ -50,7 +50,7 @@ export default {
 
 <template>
 
-  <div class="proj-card">
+  <div class="proj-list-item">
 
     <div class="row align-items-center">
 
@@ -106,7 +106,7 @@ export default {
   </div> 
 </template>
 <style>
-.proj-card {
+.proj-list-item {
   position: relative;
   display: flex;
   flex-direction: row;
