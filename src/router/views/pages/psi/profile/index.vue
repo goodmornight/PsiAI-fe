@@ -91,7 +91,10 @@ export default {
 								<!-- <Projects :projects="projectData" /> -->
 							</b-tab>
 							<b-tab title="容器">
-								<!-- <Tasks :tasks="tasks" /> -->
+								<b-form-input
+									class="mb-2"
+                  placeholder="Some text value..."
+                ></b-form-input>
 								<ContainerItem v-for="container in containerData" :key="container.title" :container="container" />
 							</b-tab>
 							<!-- <b-tab title="Files">
