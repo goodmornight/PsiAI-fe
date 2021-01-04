@@ -132,9 +132,9 @@ const containers = [
     proj: 'Lafayette / StyleTrans',
     branch: 'ChaosTransStype',
     createdTime: 1608174894608,
-    updateTime: 1608174895208,
+    updateTime: 1608175895208,
     state: 'running',
-    runningDuration: 10000,
+    runningDuration: 100000,
     users: [{
       userId: 'admin1',
       imgUrl: require('@assets/images/users/avatar.svg'),
