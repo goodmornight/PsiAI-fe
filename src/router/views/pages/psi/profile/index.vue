@@ -3,6 +3,7 @@ import appConfig from '@src/app.config'
 import Layout from '@layouts/main'
 import ProjItem from '@components/psi/proj-item'
 import DatasetItem from '@components/psi/dataset-item'
+import NoteItem from '@components/psi/note-item'
 import ContainerItem from '@components/psi/container-item'
 import Search from '@components/psi/search'
 
@@ -13,7 +14,7 @@ import UserCard from './user-card'
 import Tasks from './tasks'
 import Files from './files'
 import { activities, messageData, projectData, tasks } from './data-profile'
-import { projects, datasets, containers } from './data'
+import { projects, datasets, notes, containers } from './data'
 
 /**
  * Profile component
@@ -33,6 +34,7 @@ export default {
 		Files,
 		ProjItem,
 		DatasetItem,
+		NoteItem,
 		ContainerItem,
 		Search
 	},
@@ -42,6 +44,7 @@ export default {
 			messageData: messageData,
 			projectData: projects,
 			datasetData: datasets,
+			noteData: notes,
 			containerData: containers,
 			tasks: tasks,
 			title: 'Profile',
@@ -107,7 +110,17 @@ export default {
 							</b-tab>
 
 							<b-tab title="笔记">
-								<Files />
+
+								<Search placeholder="搜索笔记..." />
+								<b-tabs>
+									<b-tab title="我的" active>
+										<NoteItem v-for="note in noteData" :key="note.id" :note="note" />
+									</b-tab>
+									<b-tab title="收藏">
+										<NoteItem v-for="note in noteData" :key="note.id" :note="note" />
+									</b-tab>
+								</b-tabs>
+								<!-- <Files /> -->
 								<!-- <Projects :projects="projectData" /> -->
 							</b-tab>
 
