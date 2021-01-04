@@ -4,6 +4,7 @@ import Layout from '@layouts/main'
 import ProjItem from '@components/psi/proj-item'
 import DatasetItem from '@components/psi/dataset-item'
 import ContainerItem from '@components/psi/container-item'
+import Search from '@components/psi/search'
 
 import UserCard from './user-card'
 // import Activities from './activities'
@@ -32,7 +33,8 @@ export default {
 		Files,
 		ProjItem,
 		DatasetItem,
-		ContainerItem
+		ContainerItem,
+		Search
 	},
 	data() {
 		return {
@@ -91,15 +93,25 @@ export default {
 								<!-- <Projects :projects="projectData" /> -->
 							</b-tab>
 							<b-tab title="容器">
-								<b-form-input
-									class="mb-2"
-                  placeholder="Some text value..."
-                ></b-form-input>
-								<ContainerItem v-for="container in containerData" :key="container.title" :container="container" />
+								<Search placeholder="搜索容器..." />
+								<!-- <div class="search">
+									<i class="uil uil-search search-icon"></i>
+									<b-form-input
+										class="mb-2 search-input"
+	                  placeholder="搜索容器..."
+	                ></b-form-input>
+								</div> -->
+								
+                <b-tabs>
+									<b-tab title="我的" active>
+										<ContainerItem v-for="container in containerData" :key="container.title" :container="container" />
+									</b-tab>
+									<b-tab title="分享的">
+										<ContainerItem v-for="container in containerData" :key="container.title" :container="container" />
+									</b-tab>
+								</b-tabs>
+								
 							</b-tab>
-							<!-- <b-tab title="Files">
-								<Files />
-							</b-tab> -->
 						</b-tabs>
 					</div>
 				</div>
@@ -107,3 +119,8 @@ export default {
 		</div>
 	</Layout>
 </template>
+<style  lang="scss">
+.navtab-bg li > a {
+	background-color: transparent;
+}
+</style>

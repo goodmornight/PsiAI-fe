@@ -32,7 +32,8 @@ File: Main Css File
     21. Timeline 
     22. Extra Pages 
     23. Authentication
-    24. Icons 
+    24. Icons
+    25. Search 
    ======================= */
 
 
@@ -125,3 +126,7 @@ File: Main Css File
 
 /* 24. Icons */
 @import 'icons';
+
+// Psi
+/* 25.Search */
+@import 'custom/psi/search';
