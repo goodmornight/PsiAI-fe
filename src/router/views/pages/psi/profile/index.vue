@@ -29,7 +29,7 @@ export default {
 		// Activities,
 		// Messages,
 		// Projects,
-		Tasks,
+		// Tasks,
 		Files,
 		ProjItem,
 		DatasetItem,
@@ -40,7 +40,6 @@ export default {
 		return {
 			activities: activities,
 			messageData: messageData,
-			// projectData: projectData,
 			projectData: projects,
 			datasetData: datasets,
 			containerData: containers,
@@ -77,41 +76,56 @@ export default {
 				<div class="card">
 					<div class="card-body">
 						<b-tabs class="navtab-bg" pills justified>
+
 							<b-tab title="项目" active>
-								<!-- <div v-if="projectData"> -->
-									<ProjItem v-for="proj in projectData" :key="proj.title" :project="proj" />
-								<!-- </div> -->
-								
-								<!-- <Activities :activities="activities" /> -->
-							</b-tab>
-							<b-tab title="数据">
-								<DatasetItem v-for="dataset in datasetData" :key="dataset.title" :dataset="dataset" />
-								<!-- <Messages :messages="messageData" /> -->
-							</b-tab>
-							<b-tab title="笔记">
-								<Files />
-								<!-- <Projects :projects="projectData" /> -->
-							</b-tab>
-							<b-tab title="容器">
-								<Search placeholder="搜索容器..." />
-								<!-- <div class="search">
-									<i class="uil uil-search search-icon"></i>
-									<b-form-input
-										class="mb-2 search-input"
-	                  placeholder="搜索容器..."
-	                ></b-form-input>
-								</div> -->
-								
+								<Search placeholder="搜索项目..." />
+
                 <b-tabs>
 									<b-tab title="我的" active>
-										<ContainerItem v-for="container in containerData" :key="container.title" :container="container" />
+										<ProjItem v-for="proj in projectData" :key="proj.title" :project="proj" />
 									</b-tab>
-									<b-tab title="分享的">
-										<ContainerItem v-for="container in containerData" :key="container.title" :container="container" />
+									<b-tab title="收藏">
+										<ProjItem v-for="proj in projectData" :key="proj.title" :project="proj" />
+									</b-tab>
+								</b-tabs>
+
+							</b-tab>
+
+							<b-tab title="数据">
+
+								<Search placeholder="搜索数据集..." />
+
+                <b-tabs>
+									<b-tab title="我的" active>
+										<DatasetItem v-for="dataset in datasetData" :key="dataset.title" :dataset="dataset" />
+									</b-tab>
+									<b-tab title="收藏">
+										<DatasetItem v-for="dataset in datasetData" :key="dataset.title" :dataset="dataset" />
 									</b-tab>
 								</b-tabs>
 								
 							</b-tab>
+
+							<b-tab title="笔记">
+								<Files />
+								<!-- <Projects :projects="projectData" /> -->
+							</b-tab>
+
+							<b-tab title="容器">
+
+								<Search placeholder="搜索容器..." />
+
+                <b-tabs>
+									<b-tab title="我的" active>
+										<ContainerItem v-for="container in containerData" :key="container.title" :container="container" />
+									</b-tab>
+									<b-tab title="与我共享">
+										<ContainerItem v-for="container in containerData" :key="container.title" :container="container" />
+									</b-tab>
+								</b-tabs>
+
+							</b-tab>
+
 						</b-tabs>
 					</div>
 				</div>
