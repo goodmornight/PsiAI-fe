@@ -1,6 +1,6 @@
 <script>
 import Layout from '@layouts/main'
-import NoteItem from '@components/psi/note-item'
+
 import ContainerItem from '@components/psi/container-item'
 import Search from '@components/psi/search'
 
@@ -8,6 +8,7 @@ import UserCard from './user-card'
 import { projects, datasets, notes, containers } from './data'
 import Projects from './projects'
 import Datasets from './datasets'
+import Notes from './notes'
 
 /**
  * Profile component
@@ -16,11 +17,11 @@ export default {
 	components: {
 		Layout,
 		UserCard,
-		NoteItem,
 		ContainerItem,
 		Search,
 		Projects,
-		Datasets
+		Datasets,
+		Notes
 	},
 	data() {
 		return {
@@ -52,32 +53,10 @@ export default {
 
 							<b-tab title="数据">
 								<Datasets :datasets="datasetData" :stars="datasetData" />
-								<!-- <Search placeholder="搜索数据集..." />
-
-                <b-tabs>
-									<b-tab title="我的" active>
-										<DatasetItem v-for="dataset in datasetData" :key="dataset.title" :dataset="dataset" />
-									</b-tab>
-									<b-tab title="收藏">
-										<DatasetItem v-for="dataset in datasetData" :key="dataset.title" :dataset="dataset" />
-									</b-tab>
-								</b-tabs> -->
-								
 							</b-tab>
 
 							<b-tab title="笔记">
-
-								<Search placeholder="搜索笔记..." />
-								<b-tabs>
-									<b-tab title="我的" active>
-										<NoteItem v-for="note in noteData" :key="note.id" :note="note" />
-									</b-tab>
-									<b-tab title="收藏">
-										<NoteItem v-for="note in noteData" :key="note.id" :note="note" />
-									</b-tab>
-								</b-tabs>
-								<!-- <Files /> -->
-								<!-- <Projects :projects="projectData" /> -->
+								<Notes :notes="noteData" :stars="noteData" />
 							</b-tab>
 
 							<b-tab title="容器">

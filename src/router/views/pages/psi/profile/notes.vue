@@ -1,17 +1,17 @@
 <script>
 /**
- * Datasets
+ * Notes
  */
 import Search from '@components/psi/search'
-import DatasetItem from '@components/psi/dataset-item'
+import NoteItem from '@components/psi/note-item'
 
 export default {
   components: {
-    DatasetItem,
+    NoteItem,
     Search
   },
   props: {
-    datasets: {
+    notes: {
       type: Array,
       default: () => [],
     },
@@ -28,7 +28,7 @@ export default {
   },
   computed: {
     rows () {
-      return this.datasets.length
+      return this.notes.length
     },
     starRows () {
       return this.stars.length
@@ -39,10 +39,10 @@ export default {
 
 <template>
   <div>
-    <Search placeholder="搜索数据集..." />
+    <Search placeholder="搜索笔记..." />
     <b-tabs>
       <b-tab title="我的" active>
-        <DatasetItem v-for="dataset in datasets" :key="dataset.title" :dataset="dataset" />
+        <NoteItem v-for="note in notes" :key="note.id" :note="note" />
         <div class="row">
           <div class="col">
             <div
@@ -60,7 +60,7 @@ export default {
         </div>
       </b-tab>
       <b-tab title="收藏">
-        <DatasetItem v-for="dataset in stars" :key="dataset.title" :dataset="dataset" />
+        <NoteItem v-for="note in stars" :key="note.id" :note="note" />
         <div class="row">
           <div class="col">
             <div
