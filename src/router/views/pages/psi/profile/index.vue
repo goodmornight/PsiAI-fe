@@ -9,6 +9,7 @@ import { projects, datasets, notes, containers } from './data'
 import Projects from './projects'
 import Datasets from './datasets'
 import Notes from './notes'
+import Containers from './containers'
 
 /**
  * Profile component
@@ -21,7 +22,8 @@ export default {
 		Search,
 		Projects,
 		Datasets,
-		Notes
+		Notes,
+		Containers
 	},
 	data() {
 		return {
@@ -60,18 +62,7 @@ export default {
 							</b-tab>
 
 							<b-tab title="容器">
-
-								<Search placeholder="搜索容器..." />
-
-                <b-tabs>
-									<b-tab title="我的" active>
-										<ContainerItem v-for="container in containerData" :key="container.title" :container="container" />
-									</b-tab>
-									<b-tab title="与我共享">
-										<ContainerItem v-for="container in containerData" :key="container.title" :container="container" />
-									</b-tab>
-								</b-tabs>
-
+								<Containers :containers="containerData" :stars="containerData" />
 							</b-tab>
 
 						</b-tabs>
