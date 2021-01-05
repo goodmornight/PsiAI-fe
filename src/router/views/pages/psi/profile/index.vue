@@ -1,7 +1,5 @@
 <script>
 import Layout from '@layouts/main'
-// import ProjItem from '@components/psi/proj-item'
-import DatasetItem from '@components/psi/dataset-item'
 import NoteItem from '@components/psi/note-item'
 import ContainerItem from '@components/psi/container-item'
 import Search from '@components/psi/search'
@@ -9,6 +7,7 @@ import Search from '@components/psi/search'
 import UserCard from './user-card'
 import { projects, datasets, notes, containers } from './data'
 import Projects from './projects'
+import Datasets from './datasets'
 
 /**
  * Profile component
@@ -17,12 +16,11 @@ export default {
 	components: {
 		Layout,
 		UserCard,
-		// ProjItem,
-		DatasetItem,
 		NoteItem,
 		ContainerItem,
 		Search,
-		Projects
+		Projects,
+		Datasets
 	},
 	data() {
 		return {
@@ -49,12 +47,12 @@ export default {
 						<b-tabs class="navtab-bg" pills justified>
 
 							<b-tab title="项目" active>
-								<Projects :projects="projectData" />
+								<Projects :projects="projectData" :stars="projectData" />
 							</b-tab>
 
 							<b-tab title="数据">
-
-								<Search placeholder="搜索数据集..." />
+								<Datasets :datasets="datasetData" :stars="datasetData" />
+								<!-- <Search placeholder="搜索数据集..." />
 
                 <b-tabs>
 									<b-tab title="我的" active>
@@ -63,7 +61,7 @@ export default {
 									<b-tab title="收藏">
 										<DatasetItem v-for="dataset in datasetData" :key="dataset.title" :dataset="dataset" />
 									</b-tab>
-								</b-tabs>
+								</b-tabs> -->
 								
 							</b-tab>
 
