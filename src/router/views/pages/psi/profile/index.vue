@@ -1,15 +1,12 @@
 <script>
 import Layout from '@layouts/main'
-
-import ContainerItem from '@components/psi/container-item'
-import Search from '@components/psi/search'
-
 import UserCard from './user-card'
-import { projects, datasets, notes, containers } from './data'
 import Projects from './projects'
 import Datasets from './datasets'
 import Notes from './notes'
 import Containers from './containers'
+
+import { projects, datasets, notes, containers } from './data'
 
 /**
  * Profile component
@@ -18,8 +15,6 @@ export default {
 	components: {
 		Layout,
 		UserCard,
-		ContainerItem,
-		Search,
 		Projects,
 		Datasets,
 		Notes,

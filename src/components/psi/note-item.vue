@@ -29,12 +29,12 @@ export default {
     }
 
   },
-  data() {
+  data () {
     return {
       
     }
   },
-  computed:{
+  computed: {
     ...authComputed,
     username () {
       return this.note.username === this.currentUser.username ? '我' : this.note.username
