@@ -230,16 +230,17 @@ export default {
   position: relative;
 }
 .avatar-overlay {
-  width: 4.5rem;
-  height: 4.5rem;
   position:absolute;
   top: 0;
   left: 0;
-  line-height: 4.5rem;
+  width: 4.5rem;
+  height: 4.5rem;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
+  line-height: 4.5rem;
   transition: .5s ease;
+  cursor: pointer;
 }
 .custom-textarea {
   position: relative;
@@ -249,6 +250,6 @@ export default {
   bottom: 0.5rem;
   right: 1rem;
   color: #6c757d;
-  /*float: right;*/
+  font-size: 0.5rem;
 }
 </style>
