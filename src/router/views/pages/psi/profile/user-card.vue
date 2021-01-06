@@ -54,7 +54,10 @@ export default {
     },
     cancelInfo () {
       this.isEdit = false
-    }
+    },
+    submitNewInfo () {
+      this.isEdit = false
+    },
   }
 }
 </script>
@@ -161,7 +164,7 @@ export default {
         <label v-for="skill in user.skills" v-else :key="skill" class="badge badge-soft-primary ml-1">{{ skill }}</label>
 			</div>
       <div v-if="isEdit" class="mt-3 pt-2 border-top text-center">
-        <button type="button" class="btn btn-primary btn-sm mr-1">保存</button>
+        <button type="button" class="btn btn-primary btn-sm mr-1" @click="submitNewInfo">保存</button>
         <button type="button" class="btn btn-white btn-sm ml-1" @click="cancelInfo">取消</button>
       </div>
 		</div>
