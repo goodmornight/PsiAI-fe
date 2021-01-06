@@ -206,7 +206,8 @@ const user = {
   // phone: '(123) 123 1234',
   blog: 'www.google.com',
   from: 'github',
-  profileCompeted: 0.7
+  profileCompeted: 0.7,
+  skills: ['UI design', 'UX', 'Sketch', 'Photoshop', 'Frontend']
 }
 
 export { projects, datasets, notes, containers, user }

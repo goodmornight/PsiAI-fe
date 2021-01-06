@@ -1,15 +1,21 @@
 <script>
+import Multiselect from 'vue-multiselect'
 import { authComputed } from '@state/helpers'
 
 import { user } from './data'
 
 export default {
+  components: { Multiselect },
 	data () {
 		return {
 			user: user,
       isEdit: false,
       isFollow: false,
-      detail: user.detail
+      detail: user.detail,
+      email: user.email,
+      blog: user.blog,
+      newSkill: user.skills,
+      skillOptions: ['UI design', 'UX', 'Sketch', 'Photoshop', 'Frontend']
 		}
 	},
 	computed: {
@@ -45,6 +51,9 @@ export default {
   methods: {
     editInfo () {
       this.isEdit = true
+    },
+    cancelInfo () {
+      this.isEdit = false
     }
   }
 }
@@ -97,7 +106,6 @@ export default {
 			<div class="mt-5 pt-2 border-top">
 				<h4 class="mb-3 font-size-15">简介</h4>
 
-        <!-- <textarea placeholder="请输入个人简介（不超过150字）"></textarea> -->
         <div v-if="isEdit" class="custom-textarea">
           <b-form-textarea
             v-model="detail"
@@ -116,23 +124,46 @@ export default {
 
 			<div v-if="user.email || user.blog" class="mt-3 pt-2 border-top">
 				<h4 class="mb-3 font-size-15">联系方式</h4>
-				<div v-if="user.email" class="row mb-2 text-muted">
+
+				<div v-if="user.email" class="row w-100 align-items-center m-0 mb-2 text-muted">
 					<div class="col-3 pl-3 font-weight-bold">邮箱</div>
-					<div class="col-9">{{ user.email }}</div>
+          <b-form-input
+            v-if="isEdit"
+            v-model="email"
+            type="email"
+            placeholder="输入邮箱（对外公开）"
+            class="col-9"
+          ></b-form-input>
+					<div v-else class="col-9">{{ user.email }}</div>
 				</div>
-				<div v-if="user.blog" class="row mb-2 text-muted">
+
+				<div v-if="user.blog" class="row w-100 align-items-center m-0 mb-2 text-muted">
 					<div class="col-3 pl-3 font-weight-bold">博客</div>
-					<div class="col-9"><a :href="user.blog">{{ user.blog }}</a></div>
+          <b-form-input
+            v-if="isEdit"
+            v-model="blog"
+            type="url"
+            placeholder="输入个人博客URL"
+            class="col-9"
+          ></b-form-input>
+					<div v-else class="col-9"><a :href="user.blog">{{ user.blog }}</a></div>
 				</div>
 			</div>
+
 			<div class="mt-3 pt-2 border-top">
 				<h4 class="mb-3 font-size-15">技能</h4>
-				<label class="badge badge-soft-primary">UI design</label>
-				<label class="badge badge-soft-primary ml-1">UX</label>
-				<label class="badge badge-soft-primary ml-1">Sketch</label>
-				<label class="badge badge-soft-primary ml-1">Photoshop</label>
-				<label class="badge badge-soft-primary ml-1">Frontend</label>
+        <multiselect
+          v-if="isEdit"
+          v-model="newSkill"
+          :options="skillOptions"
+          :multiple="true"
+        ></multiselect>
+        <label v-for="skill in user.skills" v-else :key="skill" class="badge badge-soft-primary ml-1">{{ skill }}</label>
 			</div>
+      <div v-if="isEdit" class="mt-3 pt-2 border-top text-center">
+        <button type="button" class="btn btn-primary btn-sm mr-1">保存</button>
+        <button type="button" class="btn btn-white btn-sm ml-1" @click="cancelInfo">取消</button>
+      </div>
 		</div>
 	</div>
 </template>
