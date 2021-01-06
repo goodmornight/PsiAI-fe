@@ -198,10 +198,11 @@ const containers = [
 
 const user = {
   id: 1,
-  username: 'Admin',
+  username: 'admin',
+  nickname: 'Admin',
   avatar: require('@assets/images/users/avatar.svg'),
   detail: 'Hi I\'m Shreyu. I am user experience and user interface designer. I have been working on UI & UX since last 10 years.',
-  email: 'xyz123@gmail.com',
+  email: 'admin@gmail.com',
   // phone: '(123) 123 1234',
   blog: 'www.google.com',
   from: 'github',

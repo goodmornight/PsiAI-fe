@@ -7,10 +7,16 @@ export default {
 	data () {
 		return {
 			user: user,
+      isEdit: false,
+      isFollow: false,
+      detail: user.detail
 		}
 	},
 	computed: {
     ...authComputed,
+    isSelf () {
+      return this.currentUser.username === this.user.username
+    },
     fromApp () {
     	const vm = this
     	let app = vm.user.from
@@ -35,6 +41,11 @@ export default {
     profileCompeted () {
     	return this.user.profileCompeted * 100
     }
+  },
+  methods: {
+    editInfo () {
+      this.isEdit = true
+    }
   }
 }
 </script>
@@ -47,7 +58,10 @@ export default {
 					alt
 					class="avatar-lg rounded-circle"
 				/>
-				<h5 class="mt-2 mb-0">{{ user.username }}</h5>
+				<h5 class="mt-2 mb-0">{{ user.nickname }}</h5>
+        <h5 class="text-muted font-weight-normal mt-0 mb-2">
+          ({{ user.username }})
+        </h5>
 				<b-badge class="mb-4"
 					:class="fromApp.class"
 	      >{{ fromApp.text }}认证</b-badge>
@@ -69,19 +83,37 @@ export default {
 						</span>
 					</div>
 				</div>
-
-				<button type="button" class="btn btn-primary btn-sm mr-1"
-					>关注</button
-				>
-				<button type="button" class="btn btn-white btn-sm ml-1">编辑</button>
+        <div v-if="isSelf">
+          <button v-if="!isEdit" type="button" class="btn btn-white btn-sm" :disable="isEdit" @click="editInfo">
+            编辑
+          </button>
+        </div>
+        <div v-else>
+          <button v-if="isFollow" type="button" class="btn btn-white btn-sm">取消关注</button>
+          <button v-else type="button" class="btn btn-primary btn-sm">关注</button>
+        </div>
 			</div>
 
 			<div class="mt-5 pt-2 border-top">
 				<h4 class="mb-3 font-size-15">简介</h4>
-				<p class="text-muted mb-4">
-					{{ user.detail }}
+
+        <!-- <textarea placeholder="请输入个人简介（不超过150字）"></textarea> -->
+        <div v-if="isEdit" class="custom-textarea">
+          <b-form-textarea
+            v-model="detail"
+            rows="4"
+            maxlength="150"
+            no-resize
+            class="pb-4"
+          ></b-form-textarea>
+          <span class="custom-textarea-tip-text d-none d-xl-block">{{ detail.length + '/150'}}</span>
+        </div>
+        
+				<p v-else class="text-muted mb-4">
+					{{ user.detail || (isSelf ? '你' : '这个人') + '的简介空空如也...' }}
 				</p>
 			</div>
+
 			<div v-if="user.email || user.blog" class="mt-3 pt-2 border-top">
 				<h4 class="mb-3 font-size-15">联系方式</h4>
 				<div v-if="user.email" class="row mb-2 text-muted">
@@ -104,3 +136,15 @@ export default {
 		</div>
 	</div>
 </template>
+<style>
+.custom-textarea {
+  position: relative;
+}
+.custom-textarea-tip-text {
+  position:absolute;
+  bottom: 0.5rem;
+  right: 1rem;
+  color: #6c757d;
+  /*float: right;*/
+}
+</style>
