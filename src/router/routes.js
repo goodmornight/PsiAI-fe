@@ -470,7 +470,7 @@ const homeRoutes = [
 const projectRoutes = [
   {
     path: '/project',
-    name: 'Project',
+    name: 'Projects',
     icon: 'archive',
     component: () => lazyLoadView(import('@views/pages/psi/proj-index')),
     meta: { authRequired: true },
@@ -481,7 +481,7 @@ const projectRoutes = [
 const datasetRoutes = [
   {
     path: '/dataset',
-    name: 'Dataset',
+    name: 'Datasets',
     icon: 'database',
     component: () => lazyLoadView(import('@views/pages/psi/dataset-index')),
     meta: { authRequired: true },
