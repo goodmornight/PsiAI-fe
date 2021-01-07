@@ -61,11 +61,11 @@ export default {
         <div class="proj-card-overlay">
           <div class="proj-card-overlay-top">
             <div class="row wh-100 overflow-text">
-              <div class="col-6">
+              <!-- <div class="col-6">
                 <b-badge class="badge-success">{{ project.frame }}</b-badge>
                 <b-badge class="badge-info ml-1">{{ project.pyVer }}</b-badge>
-              </div>
-              <div class="col-6">
+              </div> -->
+              <!-- <div class="col-6">
                 <span>
                   <i class="uil uil-thumbs-up font-size-14"></i>
                   {{ project.like | numFilter }}
@@ -78,7 +78,7 @@ export default {
                   <i class="uil  uil-eye font-size-14 ml-1"></i>
                   {{ project.watch | numFilter }}
                 </span>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="proj-card-overlay-footer">

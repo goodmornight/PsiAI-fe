@@ -57,11 +57,15 @@ export default {
           :alt="project.title"
           fluid
         ></b-img-lazy>
-        <!-- <img
+        <div class="proj-type">
+          <b-badge class="badge-success">{{ project.frame }}</b-badge>
+          <b-badge class="badge-info mt-1">{{ project.pyVer }}</b-badge>
+        </div>
+        <img
           class="proj-avatar"
           :src="project.avatar"
           alt="avatar"
-        /> -->
+        />
       </div>
       <div class="proj-card-body">
         <span class="proj-title overflow-text">
@@ -70,7 +74,7 @@ export default {
           <i v-else class="uil uil-eye-slash font-size-14 ml-2"></i>
         </span>
         <b-badge v-for="tag in project.tags" :key="tag" variant="primary" class="mr-2">{{ tag }}</b-badge>
-        <!-- <div class="info-text">
+        <div class="info-text">
           <span>
             <i class="uil uil-thumbs-up font-size-14"></i>
             {{ project.like | numFilter }}
@@ -83,8 +87,8 @@ export default {
             <i class="uil  uil-eye font-size-14 ml-2"></i>
             {{ project.watch | numFilter }}
           </span>
-        </div> -->
-        <div>
+        </div>
+        <!-- <div>
           <img
             class="avatar-sm rounded-circle mr-2"
             :src="project.avatar"
@@ -92,13 +96,13 @@ export default {
           />
           <span>{{ project.username }}</span>
           <span>({{ project.users.length }})</span>
-        </div>
+        </div> -->
         
       </div>
-      <div class="proj-card-footer">
+      <!-- <div class="proj-card-footer">
         <span>{{ project.updateTime | moment("from", "now") }}</span>
         <span>{{ project.size | gbFilter }}</span>
-      </div>
+      </div> -->
     </div>
   </div>
   
@@ -141,10 +145,17 @@ export default {
   /*margin: 1rem 1rem 0 1rem;*/
   padding: 0.5rem;
 }
+.proj-type {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
 .proj-avatar {
   position: absolute;
-  bottom: 1rem;
-  right: 1rem;
+  bottom: 0.5rem;
+  left: 0.5rem;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;

@@ -1,8 +1,8 @@
 <script>
 import appConfig from '@src/app.config'
 import Layout from '@layouts/main'
-// import ProjItem from '@components/psi/proj-index-item'
-import ProjItem from '@components/psi/proj-card'
+import ProjItem from '@components/psi/proj-index-item'
+// import ProjItem from '@components/psi/proj-card'
 
 import { projects } from './data'
 
