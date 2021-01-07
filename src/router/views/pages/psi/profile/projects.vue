@@ -22,25 +22,50 @@ export default {
 	},
 	data () {
 		return {
-			currentPage: 1,
-			perPage: 5,
+			currentPage: 1,          // 当前页
+			perPage: 5,              // 每一页显示数量
+			filterOption: '综合',    // 筛选项
+			filterOptions: [{        // 筛选可选项
+					url: '#',
+					content:'相关度'
+				}, {
+					url: '#',
+					content:'关注数'
+				}, {
+					url: '#',
+					content:'收藏数'
+				}, {
+					url: '#',
+					content:'点赞数'
+				}, {
+					url: '#',
+					content:'最近更新'
+				}, {
+					url: '#',
+					content:'综合'
+				}]
 		}
 	},
 	computed: {
+		// 用户总项目数
 		rows () {
 			return this.projects.length
 		},
+		// 用户总收藏项目数
 		starRows () {
 			return this.stars.length
-		}
-	}
+		},
+	},
 }
 </script>
 
 <template>
 	<div>
+
 		<Search placeholder="搜索项目..." />
-    <b-tabs>
+
+    <b-tabs nav-class="custom-nav">
+
 			<b-tab title="我的" active>
 				<ProjItem v-for="proj in projects" :key="proj.title" :project="proj" />
 				<div class="row">
@@ -59,6 +84,7 @@ export default {
 					</div>
 				</div>
 			</b-tab>
+
 			<b-tab title="收藏">
 				<ProjItem v-for="proj in stars" :key="proj.title" :project="proj" />
 				<div class="row">
@@ -77,6 +103,30 @@ export default {
 					</div>
 				</div>
 			</b-tab>
+
+			<template v-slot:tabs-end>
+        <b-dropdown class="custom-dropdown" right variant="link" toggle-class="text-decoration-none">
+					<template slot="button-content">
+						{{ filterOption }}
+						<i class="uil uil-angle-down"></i>
+					</template>
+					<b-dropdown-item v-for="option in filterOptions" :key="option.content" :href="option.url" @click="filterOption = option.content">
+						{{ option.content }}
+					</b-dropdown-item>
+				</b-dropdown>
+      </template>
+
 		</b-tabs>
 	</div>
 </template>
+<style>
+.custom-nav {
+	position: relative;
+}
+
+.custom-dropdown {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+</style>
