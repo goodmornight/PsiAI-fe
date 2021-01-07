@@ -67,7 +67,8 @@ export default {
           <a href="javascript:void(0);" class="text-muted font-weight-bold title">
             {{ project.title }}
           </a>
-          <i class="uil uil-globe font-size-14 ml-2"></i>
+          <i v-if="project.isPublic" class="uil uil-globe font-size-14 ml-2"></i>
+          <i v-else class="uil uil-eye-slash font-size-14 ml-2"></i>
           <b-badge class="badge-soft-primary ml-2">{{ "V " + project.version }}</b-badge>
           <b-badge class="badge-soft-success ml-2">{{ project.frame }}</b-badge>
           <b-badge class="badge-soft-info ml-2">{{ project.pyVer }}</b-badge>
@@ -76,7 +77,7 @@ export default {
         </div>
         <div class="info-text">
           <span>
-            <i class="uil uil-thumbs-up font-size-14 ml-2"></i>
+            <i class="uil uil-thumbs-up font-size-14"></i>
             {{ project.like | numFilter }}
           </span>
           <span>

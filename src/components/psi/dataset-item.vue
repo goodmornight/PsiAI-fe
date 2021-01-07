@@ -72,7 +72,7 @@ export default {
         </div>
         <div class="info-text">
           <span>
-            <i class="uil uil-thumbs-up font-size-14 ml-2"></i>
+            <i class="uil uil-thumbs-up font-size-14"></i>
             {{ dataset.like | numFilter }}
           </span>
           <span>

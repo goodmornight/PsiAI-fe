@@ -1,7 +1,10 @@
 <script>
 import appConfig from '@src/app.config'
 import Layout from '@layouts/main'
-import Search from '@components/psi/search'
+// import ProjItem from '@components/psi/proj-index-item'
+import ProjItem from '@components/psi/proj-card'
+
+import { projects } from './data'
 
 /**
  * Projects Index
@@ -11,9 +14,11 @@ export default {
     title: 'Projects',
     meta: [{ name: 'description', content: appConfig.description }],
   },
-  components: { Layout, Search },
+  components: { Layout, ProjItem },
   data() {
     return {
+      projects: projects,
+      placeholder: '搜索项目...'
     }
   },
 }
@@ -58,11 +63,21 @@ export default {
     </div>
     <!-- end row -->
     <div class="row">
-      <div class="col">
-        <Search placeholder="搜索项目..." />
+      <div class="col-xl-8 col-lg-12">
+        <div class="search">
+          <i class="uil uil-search search-icon"></i>
+          <b-form-input
+            class="mb-2 search-input"
+            :placeholder="placeholder"
+          ></b-form-input>
+        </div>
+        <div class="row">
+          <ProjItem v-for="proj in projects" :key="proj.id" :project="proj"/>
+        </div>
       </div>
-      <div class="col">
+      <div class="col-xl-3 col-lg-12">
       </div>
     </div>
+    
   </Layout>
 </template>

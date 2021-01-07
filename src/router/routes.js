@@ -472,7 +472,7 @@ const projectRoutes = [
     path: '/project',
     name: 'Projects',
     icon: 'archive',
-    component: () => lazyLoadView(import('@views/pages/psi/proj-index')),
+    component: () => lazyLoadView(import('@views/pages/psi/projects/proj-index')),
     meta: { authRequired: true },
     props: (route) => ({ user: store.state.auth.currentUser || {} }),
   },
