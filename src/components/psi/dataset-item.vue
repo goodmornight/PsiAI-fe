@@ -60,7 +60,7 @@ export default {
 
       <div class="col pl-0">
         <div class="d-flex flex-row text-center align-items-center">
-          <a href="javascript:void(0);" class="text-muted font-weight-bold title">
+          <a href="javascript:void(0);" class="text-dark font-weight-bold title">
             {{ dataset.title }}
           </a>
           <i class="uil uil-globe font-size-14 ml-2"></i>

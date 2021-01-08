@@ -72,7 +72,10 @@ export default {
 
       <div class="proj-card-body overflow-text">
         <span class="proj-title">
-          <span class="font-weight-bold">{{ project.title }}</span>
+          <!-- <a herf="#" class="font-weight-bold">{{ project.title }}</a> -->
+          <a href="javascript:void(0);" class="text-dark font-weight-bold title">
+            {{ project.title }}
+          </a>
           <i v-if="project.isPublic" class="uil uil-globe font-size-14 ml-2"></i>
           <i v-else class="uil uil-eye-slash font-size-14 ml-2"></i>
         </span>

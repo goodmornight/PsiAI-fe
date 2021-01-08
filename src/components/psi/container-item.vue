@@ -37,7 +37,7 @@ export default {
     <div class="row justify-content-between">
 
       <div class="col-4 align-self-center">
-        <a href="javascript:void(0);" class="text-muted font-weight-bold text-monospace title">
+        <a href="javascript:void(0);" class="text-dark font-weight-bold text-monospace title">
         {{ container.title }}
         </a>
         <b-badge class="badge-soft-info ml-2">{{ container.type }}</b-badge>
