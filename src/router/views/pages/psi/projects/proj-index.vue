@@ -1,8 +1,7 @@
 <script>
 import appConfig from '@src/app.config'
 import Layout from '@layouts/main'
-import ProjItem from '@components/psi/proj-index-item'
-// import ProjItem from '@components/psi/proj-card'
+import ProjCard from '@components/psi/proj-card'
 
 import { projects } from './data'
 
@@ -14,7 +13,7 @@ export default {
     title: 'Projects',
     meta: [{ name: 'description', content: appConfig.description }],
   },
-  components: { Layout, ProjItem },
+  components: { Layout, ProjCard },
   data() {
     return {
       projects: projects,
@@ -28,17 +27,17 @@ export default {
   <Layout>
     <div class="row mt-4">
       <div class="col-12">
-        <div class="card">
+        <div class="card mb-4">
           <div class="card-body">
             <div class="row align-items-center">
-              <div class="col-xl-2 col-lg-3 col-6">
+              <div class="col-xl-2 col-lg-3 col-md-6 col-12">
                 <img
                   src="@assets/images/cal.png"
                   class="mr-4 align-self-center img-fluid"
                   alt="cal"
                 />
               </div>
-              <div class="col-xl-10 col-lg-9">
+              <div class="col-xl-10 col-lg-9 col-md-6 col-12">
                 <div class="mt-4 mt-lg-0">
                   <h3 class="mt-0 mb-1 font-weight-bold">项目</h3>
                   <p class="text-muted mb-2">
@@ -64,7 +63,7 @@ export default {
     <!-- end row -->
     <div class="row">
       <div class="col-xl-8 col-lg-12">
-        <div class="search">
+        <div class="search mb-4">
           <i class="uil uil-search search-icon"></i>
           <b-form-input
             class="mb-2 search-input"
@@ -72,7 +71,7 @@ export default {
           ></b-form-input>
         </div>
         <div class="row">
-          <ProjItem v-for="proj in projects" :key="proj.id" :project="proj"/>
+          <ProjCard v-for="proj in projects" :key="proj.id" :project="proj"/>
         </div>
       </div>
       <div class="col-xl-3 col-lg-12">
