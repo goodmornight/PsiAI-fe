@@ -3,6 +3,9 @@ const projects = [
     title: 'Schubert / StyleTransfer',
     // 图片地址
     imgUrl: '',
+    username: 'admin',
+    nickname: 'Admin',
+    avatar: require('@assets/images/users/avatar.svg'),
     // 简介
     desc: "This repository contains a slightly modified version of Fast Style Transfer in TensorFlow. It trains a neural network on the style of any image you provide it and outputs a model you can use in ml5.js with the ml5.styleTransfer() method.",
     isPublic: true,       // 是否公开 
@@ -43,6 +46,9 @@ const projects = [
     title: 'Zalando / Fashion MNIST',
     // 图片地址
     imgUrl: '',
+    username: 'admin',
+    nickname: 'Admin',
+    avatar: require('@assets/images/users/avatar.svg'),
     // 简介
     desc: "Fashion-MNIST is a dataset of Zalando's article images—consisting of a training set of 60,000 examples and a test set of 10,000 examples. Each example is a 28x28 grayscale image, associated with a label from 10 classes. Fashion-MNIST is a dataset of Zalando's article images—consisting of a training set of 60,000 examples and a test set of 10,000 examples.",
     isPublic: true,       // 是否公开 
@@ -86,6 +92,9 @@ const datasets = [
     title: 'Zalando / Fashion MNIST',
     // 图片地址
     imgUrl: '',
+    username: 'admin',
+    nickname: 'Admin',
+    avatar: require('@assets/images/users/avatar.svg'),
     // 简介
     desc: "Fashion-MNIST is a dataset of Zalando's article images—consisting of a training set of 60,000 examples and a test set of 10,000 examples. Each example is a 28x28 grayscale image, associated with a label from 10 classes. Fashion-MNIST is a dataset of Zalando's article images—consisting of a training set of 60,000 examples and a test set of 10,000 examples.",
     isPublic: true,       // 是否公开 
@@ -128,7 +137,9 @@ const notes = [
   {
     id: 1,
     title: '人工智能(crawler)',
-    username: 'night',
+    username: 'admin',
+    nickname: 'Admin',
+    avatar: require('@assets/images/users/avatar.svg'),
     type: 'proj',
     createdTime: 1608174894608,
     updateTime: 1608175895208,
@@ -141,6 +152,8 @@ const notes = [
     id: 2,
     title: 'crawler',
     username: 'admin',
+    nickname: 'Admin',
+    avatar: require('@assets/images/users/avatar.svg'),
     type: 'dataset',
     createdTime: 1608174890608,
     updateTime: 1608176895208,
@@ -153,6 +166,8 @@ const notes = [
     id: 3,
     title: '人工智能(crawler)',
     username: 'admin',
+    nickname: 'Admin',
+    avatar: require('@assets/images/users/avatar.svg'),
     type: 'dataset',
     createdTime: 1608174890608,
     updateTime: 1608176895208,
@@ -168,6 +183,9 @@ const containers = [
     title: 'afenqi / a1b2c3a1b2c3a1b2',
     type: '基础版',
     detail: '2核4G内存',
+    username: 'admin',
+    nickname: 'Admin',
+    avatar: require('@assets/images/users/avatar.svg'),
     proj: 'Lafayette / StyleTrans',
     branch: 'ChaosTransStype',
     createdTime: 1608174894608,

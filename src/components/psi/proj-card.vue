@@ -2,8 +2,11 @@
 /**
  * ProjCard component
  */
+import Popper from 'vue-popperjs'
+import 'vue-popperjs/dist/vue-popper.css'
+
 export default {
-  components: {  },
+  components: { Popper },
   filters:{
     // 计算机存储数值换算,默认传进来的最小单位为B
     gbFilter (value) {
@@ -63,16 +66,46 @@ export default {
           <b-badge class="badge-success">{{ project.frame }}</b-badge>
           <b-badge class="badge-info mt-1">{{ project.pyVer }}</b-badge>
         </div>
-        <img
+        <!-- <img
           class="proj-avatar"
           :src="project.avatar"
           alt="avatar"
-        />
+        /> -->
+        <popper trigger="hover" :options="{ placement: 'right' }">
+          <a slot="reference" href="#" class="proj-avatar-popover">
+            <img
+              class="proj-avatar"
+              :src="project.avatar"
+              alt="avatar"
+            />
+          </a>
+          <div class="popper text-left">
+            <div class="card mb-0" style="box-shadow: unset">
+              <div class="card-body p-3">
+                <div class="media">
+                  <img
+                    :src="project.avatar"
+                    class="mr-3 avatar-lg rounded-circle"
+                    alt="shreyu"
+                  />
+                  <div class="media-body">
+                    <h5 class="mt-1 mb-0">{{ project.nickname }}</h5>
+                    <h6 class="font-weight-normal mt-1 mb-1">
+                      <a href>@{{ project.username }}</a>
+                    </h6>
+                    <p class="text-muted"><i class="uil uil-calendar-alt mr-1"></i>{{ project.updateTime | moment("from", "now") }}</p>
+                  </div>
+
+                </div>
+                <button type="button" class="btn btn-primary btn-sm btn-block mr-1">关注</button>
+              </div>
+            </div>
+          </div> 
+        </popper>
       </div>
 
       <div class="proj-card-body overflow-text">
         <span class="proj-title">
-          <!-- <a herf="#" class="font-weight-bold">{{ project.title }}</a> -->
           <a href="javascript:void(0);" class="text-dark font-weight-bold title">
             {{ project.title }}
           </a>
@@ -166,14 +199,22 @@ export default {
 }
 
 .proj-avatar {
-  position: absolute;
+/*  position: absolute;
   bottom: 0.5rem;
-  left: 0.5rem;
+  left: 0.5rem;*/
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
   border: 0 solid rgba(0, 0, 0, 0.125);
   box-shadow: 0 0.05rem 0.01rem rgba(75, 75, 90, 0.075);
+}
+
+.proj-avatar-popover {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .info-text {

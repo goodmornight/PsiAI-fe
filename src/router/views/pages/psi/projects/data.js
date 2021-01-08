@@ -5,6 +5,7 @@ const projects = [
     // 图片地址
     imgUrl: require('@assets/images/covers/2.jpg'),
     username: 'admin',
+    nickname: 'Admin',
     avatar: require('@assets/images/users/avatar.svg'),
     size: 10240,
     // 简介
@@ -49,6 +50,7 @@ const projects = [
     // 图片地址
     imgUrl: require('@assets/images/covers/2.jpg'),
     username: 'admin',
+    nickname: 'Admin',
     avatar: require('@assets/images/users/avatar.svg'),
     // 简介
     desc: "Fashion-MNIST is a dataset of Zalando's article images—consisting of a training set of 60,000 examples and a test set of 10,000 examples. Each example is a 28x28 grayscale image, associated with a label from 10 classes. Fashion-MNIST is a dataset of Zalando's article images—consisting of a training set of 60,000 examples and a test set of 10,000 examples.",
@@ -83,7 +85,7 @@ const projects = [
       imgUrl: require('@assets/images/users/avatar-2.svg'),
     }],
     // 最近更新时间
-    updateTime: 1608174894608,
+    updateTime: 1608599994608,
     isArchive: false,
     isInvalid: true
   }
