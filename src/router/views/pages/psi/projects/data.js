@@ -1,7 +1,7 @@
 const projects = [
   {
     id: 1,
-    title: 'Schubert / StyleTransfer',
+    title: 'StyleTransfer',
     // 图片地址
     imgUrl: require('@assets/images/covers/2.jpg'),
     username: 'admin',
@@ -45,7 +45,7 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Zalando / Fashion MNIST',
+    title: 'Fashion MNIST',
     // 图片地址
     imgUrl: require('@assets/images/covers/2.jpg'),
     username: 'admin',
@@ -88,4 +88,67 @@ const projects = [
     isInvalid: true
   }
 ]
-export { projects }
+
+const boardList = [
+  {
+    id: 1,
+    username: 'Schubert',
+    projName: 'StyleTransfer',
+    originRank: 5
+  },
+  {
+    id: 2,
+    username: 'Zalando',
+    projName: 'Fashion MNIST',
+    originRank: 6
+  },
+  {
+    id: 3,
+    username: 'Schubert',
+    projName: 'StyleTransfer',
+    originRank: 1
+  },
+  {
+    id: 4,
+    username: 'Zalando',
+    projName: 'Fashion MNIST',
+    originRank: 3
+  },
+  {
+    id: 5,
+    username: 'Schubert',
+    projName: 'StyleTransfer',
+    originRank: 2
+  },
+  {
+    id: 6,
+    username: 'Zalando',
+    projName: 'Fashion MNIST',
+    originRank: 50
+  },
+  {
+    id: 7,
+    username: 'Schubert',
+    projName: 'StyleTransfer',
+    originRank: 11
+  },
+  {
+    id: 8,
+    username: 'Zalando',
+    projName: 'Fashion MNIST',
+    originRank: 15
+  },
+  {
+    id: 9,
+    username: 'Schubert',
+    projName: 'StyleTransfer',
+    originRank: 9
+  },
+  {
+    id: 10,
+    username: 'Zalando',
+    projName: 'Fashion MNIST',
+    originRank: 8
+  },
+]
+export { projects, boardList }

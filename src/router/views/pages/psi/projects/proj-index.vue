@@ -3,7 +3,7 @@ import appConfig from '@src/app.config'
 import Layout from '@layouts/main'
 import ProjCard from '@components/psi/proj-card'
 
-import { projects } from './data'
+import { projects, boardList } from './data'
 
 /**
  * Projects Index
@@ -17,6 +17,7 @@ export default {
   data() {
     return {
       projects: projects,
+      boardList: boardList,
       placeholder: '搜索项目...'
     }
   },
@@ -62,7 +63,7 @@ export default {
     </div>
     <!-- end row -->
     <div class="row">
-      <div class="col-xl-8 col-lg-12">
+      <div class="col-xl-9 col-lg-12">
         <div class="search mb-4">
           <i class="uil uil-search search-icon"></i>
           <b-form-input
@@ -75,8 +76,28 @@ export default {
         </div>
       </div>
       <div class="col-xl-3 col-lg-12">
+        <div class="card">
+          <div class="card-body pt-2 pb-2">
+            <h5 class="mb-4 header-title">每周热门精选项目</h5>
+            <p v-for="(proj, index) in boardList" :key="proj.key" class="boardList-text">
+              <span :class="{ 'boardList-red-text': index < 3 }">{{ index + 1 }}</span>
+              <span class="ml-2">{{ proj.projName }}</span>
+              <span class="font-weight-bold font-size-13 text-danger">
+                <i v-if="proj.originRank > index + 1" class="uil uil uil-arrow-up"></i>
+                <i v-else class="uil uil uil-arrow-down text-success"></i>
+              </span>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-    
   </Layout>
 </template>
+<style scoped>
+.boardList-text {
+  font-size: 1rem;
+}
+.boardList-red-text {
+  color: #ff57c5;
+}
+</style>
