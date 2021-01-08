@@ -90,7 +90,7 @@ export default {
     <div v-if="note.isInvalid" class="overlay"></div>
   </div> 
 </template>
-<style>
+<style scoped>
 
 .note-list-item {
   position: relative;

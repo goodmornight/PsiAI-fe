@@ -84,7 +84,7 @@ export default {
     <div v-if="container.state === 'stopping'" class="overlay"></div>
   </div> 
 </template>
-<style>
+<style scoped>
 .container-list-item {
   position: relative;
   /*display: flex;

@@ -101,7 +101,7 @@ export default {
     <div v-if="dataset.isInvalid" class="overlay"></div>
   </div> 
 </template>
-<style>
+<style scoped>
 .dataset-list-item {
   position: relative;
   display: flex;

@@ -113,7 +113,7 @@ export default {
   </div>
   
 </template>
-<style>
+<style scoped>
 .proj-card {
   position: relative;
   display: flex;

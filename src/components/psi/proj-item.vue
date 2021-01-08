@@ -106,7 +106,7 @@ export default {
     <div v-if="project.isInvalid" class="overlay"></div>
   </div> 
 </template>
-<style>
+<style scoped>
 .proj-list-item {
   position: relative;
   display: flex;
