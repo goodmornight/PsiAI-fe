@@ -55,13 +55,10 @@ export default {
               </div>
             </div>
           </div>
-          <!-- end card body-->
         </div>
-        <!-- end card -->
       </div>
-      <!-- end col-12 -->
     </div>
-    <!-- end row -->
+
     <div class="row">
       <div class="col-xl-9 col-lg-12">
         <div class="search mb-4">
