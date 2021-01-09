@@ -20,21 +20,28 @@ const projects = [
     // 参与用户
     users: [{
       userId: 'admin1',
+      nickname: 'Admin1',
       imgUrl: require('@assets/images/users/avatar.svg'),
+      skills: ['UI design', 'UX', 'Sketch', 'Photoshop', 'Frontend']
     },{
       userId: 'admin2',
+      nickname: 'Admin2',
       imgUrl: require('@assets/images/users/avatar-1.svg'),
     },{
       userId: 'admin3',
+      nickname: 'Admin3',
       imgUrl: require('@assets/images/users/avatar-2.svg'),
     },{
       userId: 'admin4',
+      nickname: 'Admin4',
       imgUrl: require('@assets/images/users/avatar.svg'),
     },{
       userId: 'admin5',
+      nickname: 'Admin5',
       imgUrl: require('@assets/images/users/avatar-1.svg'),
     },{
       userId: 'admin6',
+      nickname: 'Admin6',
       imgUrl: require('@assets/images/users/avatar-2.svg'),
     }],
     // 最近更新时间
@@ -63,21 +70,27 @@ const projects = [
     // 参与用户
     users: [{
       userId: 'admin1',
+      nickname: 'Admin1',
       imgUrl: require('@assets/images/users/avatar.svg'),
     },{
       userId: 'admin2',
+      nickname: 'Admin2',
       imgUrl: require('@assets/images/users/avatar-1.svg'),
     },{
       userId: 'admin3',
+      nickname: 'Admin3',
       imgUrl: require('@assets/images/users/avatar-2.svg'),
     },{
       userId: 'admin4',
+      nickname: 'Admin4',
       imgUrl: require('@assets/images/users/avatar.svg'),
     },{
       userId: 'admin5',
+      nickname: 'Admin5',
       imgUrl: require('@assets/images/users/avatar-1.svg'),
     },{
       userId: 'admin6',
+      nickname: 'Admin6',
       imgUrl: require('@assets/images/users/avatar-2.svg'),
     }],
     // 最近更新时间
@@ -109,21 +122,27 @@ const datasets = [
     // 参与用户
     users: [{
       userId: 'admin1',
+      nickname: 'Admin1',
       imgUrl: require('@assets/images/users/avatar.svg'),
     },{
       userId: 'admin2',
+      nickname: 'Admin2',
       imgUrl: require('@assets/images/users/avatar-1.svg'),
     },{
       userId: 'admin3',
+      nickname: 'Admin3',
       imgUrl: require('@assets/images/users/avatar-2.svg'),
     },{
       userId: 'admin4',
+      nickname: 'Admin4',
       imgUrl: require('@assets/images/users/avatar.svg'),
     },{
       userId: 'admin5',
+      nickname: 'Admin5',
       imgUrl: require('@assets/images/users/avatar-1.svg'),
     },{
       userId: 'admin6',
+      nickname: 'Admin6',
       imgUrl: require('@assets/images/users/avatar-2.svg'),
     }],
     // 最近更新时间
@@ -194,21 +213,27 @@ const containers = [
     runningDuration: 100000,
     users: [{
       userId: 'admin1',
+      nickname: 'Admin1',
       imgUrl: require('@assets/images/users/avatar.svg'),
     },{
       userId: 'admin2',
+      nickname: 'Admin2',
       imgUrl: require('@assets/images/users/avatar-1.svg'),
     },{
       userId: 'admin3',
+      nickname: 'Admin3',
       imgUrl: require('@assets/images/users/avatar-2.svg'),
     },{
       userId: 'admin4',
+      nickname: 'Admin4',
       imgUrl: require('@assets/images/users/avatar.svg'),
     },{
       userId: 'admin5',
+      nickname: 'Admin5',
       imgUrl: require('@assets/images/users/avatar-1.svg'),
     },{
       userId: 'admin6',
+      nickname: 'Admin6',
       imgUrl: require('@assets/images/users/avatar-2.svg'),
     }],
   },

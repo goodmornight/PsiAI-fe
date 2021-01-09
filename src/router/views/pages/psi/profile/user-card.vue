@@ -212,7 +212,9 @@ export default {
           :options="skillOptions"
           :multiple="true"
         ></multiselect>
-        <label v-for="skill in user.skills" v-else :key="skill" class="badge badge-soft-primary ml-1">{{ skill }}</label>
+        <label v-for="skill in user.skills" v-else :key="skill" class="badge badge-soft-primary ml-1">
+          {{ skill }}
+        </label>
 
 			</div>
 
