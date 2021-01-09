@@ -93,11 +93,26 @@ export default {
                     <h6 class="font-weight-normal mt-1 mb-1">
                       <a href>@{{ project.username }}</a>
                     </h6>
-                    <p class="text-muted"><i class="uil uil-calendar-alt mr-1"></i>{{ project.updateTime | moment("from", "now") }}</p>
+                    
+                    <p class="text-muted">
+                      <i class="uil uil-calendar-alt mr-1"></i>
+                      {{ project.updateTime | moment("from", "now") }}
+                    </p>
                   </div>
-
                 </div>
-                <button type="button" class="btn btn-primary btn-sm btn-block mr-1">关注</button>
+                <div class="mt-2 border-top pt-2">
+                  <div class="text-muted">
+                    <i class="uil uil-user mr-1"></i>
+                    项目所有者
+                  </div>
+                  <div class="text-muted">
+                    <i class="uil uil-calendar-alt mr-1"></i>
+                    {{ project.updateTime | moment("from", "now") }}更新
+                  </div>
+                </div>
+                <div class="mt-2 border-top pt-2">
+                  <button type="button" class="btn btn-primary btn-sm btn-block mr-1">关注</button>
+                </div>
               </div>
             </div>
           </div> 

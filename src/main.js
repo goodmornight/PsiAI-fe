@@ -13,6 +13,9 @@ import VueRouter from 'vue-router'
 import VueFeather from 'vue-feather'
 import flatPickr from 'vue-flatpickr-component'
 import VueKeyCloak from '@dsb-norge/vue-keycloak-js'
+import moment from 'moment'
+import 'moment/locale/zh-cn'
+import VueMoment from 'vue-moment'
 
 Vue.use(VueFeather)
 Vue.use(flatPickr)
@@ -32,13 +35,11 @@ if (process.env.VUE_APP_TEST === 'e2e') {
 Vue.use(BootstrapVue)
 Vue.use(Vuelidate)
 Vue.use(VueMask)
-Vue.use(require('vue-moment'))
+Vue.use(VueMoment, {
+  moment
+})
 
 Vue.component('apexchart', VueApexCharts)
-
-// Uncomment this if you are having api served through other url or do not want to use fake backend
-// Vue.prototype.$http = require('axios')
-// Vue.prototype.$http.defaults.baseURL  = 'http://mock-api.coderthemes.com/'
 
 let app = null
 Vue.use(VueKeyCloak, {
