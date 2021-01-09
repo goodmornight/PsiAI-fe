@@ -13,9 +13,10 @@ import VueRouter from 'vue-router'
 import VueFeather from 'vue-feather'
 import flatPickr from 'vue-flatpickr-component'
 import VueKeyCloak from '@dsb-norge/vue-keycloak-js'
+import VueMoment from 'vue-moment'
 import moment from 'moment'
 import 'moment/locale/zh-cn'
-import VueMoment from 'vue-moment'
+
 
 Vue.use(VueFeather)
 Vue.use(flatPickr)
